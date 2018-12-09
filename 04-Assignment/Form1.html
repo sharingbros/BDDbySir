@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration </title>
+<script type="text/javascript">
+function chkEmpty(){
+	var name=/^[A-Za-z]{3,20}$/;
+	var mob = /^[7-9]{1}[0-9]{9}$/;
+	var email=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+		
+	if (document.frmReg.txtName.value == "") {alert("Please fill the Name");}
+	else if(name.test(document.frmReg.txtName.value) == false) {alert("Please enter valid Name");}
+	else if (document.frmReg.txtEmail.value == ""){alert("Please fill the Email");}
+	else if (email.test(document.frmReg.txtEmail.value) == false) { alert("Please enter valid Email Id.");}
+	else if (document.frmReg.txtPhone.value == "") {alert("Please fill the Mobile No.");}
+	else if(document.frmReg.gender.value==""){alert("Please select gender")}
+	else if (document.frmReg.city.value=="Select City"){alert("Please select city")}
+	else if (mob.test(document.frmReg.txtPhone.value) == false) { alert("Please enter valid Contact no.");}
+	else if (document.frmReg.address.value=="") { alert("Please enter valid address");}
+	
+		else {
+		window.location="success.html";
+		}
+	}
+</script>
+</head>
+<body>
+<h2>Registration Page</h2>
+<form name="frmReg">
+
+	   <table  align="" style="font-family:Calibri;" >
+            <tr>
+                <td align="left">Enter Name* : </td>
+                <td><input type="text" class="Format1" id ="txtName" name="name"  /></td>
+            </tr>
+			
+			 <tr>
+                <td align="left">Email* :</td>
+                <td><input type="text" id ="txtEmail" name="Email" ></td>
+            </tr>
+            	
+			<tr>
+                <td align="left">Mobile no.*:</td>
+                <td><input type="text" name="Phone" id ="txtPhone"/></td>
+            </tr>
+			
+			<tr>
+                <td align="left">Address:</td>
+                <td>
+                	<textarea rows="5" cols="20" name="address"></textarea>
+                </td>
+			</tr>
+			<tr>
+			<td align="left">Gender:</td>
+			<td><input type="radio" value="Male" name="gender" id="male" >Male
+			<input type="radio" value="Female" name="gender" id="female">Female
+		
+			<br/></td>
+			</tr>
+			<tr>
+	            <td align="left">City* : </td>
+	            <td><select  name="city">
+					  <option value="Select City" selected>Select City</option>
+					  <option value="Pune">Pune</option>
+					  <option value="Bangalore">Bangalore</option>
+					  <option value="Chennai">Chennai</option>
+					   <option value="Hyderabad">Hyderabad</option>
+				</select></td>
+	        </tr>
+			
+			<tr>
+                <td colspan=2 align="right"> <br> 
+				<input type="button" id ="btnRegister" class="btn" value = "Confirm Registration" onclick=chkEmpty()>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </tr>
+           </table>
+
+       </form>
+
+</body>
+</html>
